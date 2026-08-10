@@ -140,6 +140,7 @@ def convert(md):
 sections, nav, part = [], [], None
 for fn, label, partname in ORDER:
     body = convert(open(os.path.join(SRC, fn), encoding="utf-8").read())
+    body = re.sub(r'(<h[234]>\s*💛.*?)(?=<hr>|$)', r'<div class="warm">\1</div>', body, flags=re.S)
     sections.append(f'<section id="{SLUG[fn]}">{body}</section>')
     if partname:
         nav.append(f'<div class="nav-part">{partname}</div>')
@@ -148,13 +149,13 @@ for fn, label, partname in ORDER:
 CSS = """
 :root{--paper:#F3F5F2;--card:#FBFCFA;--rule:#D6DCD6;--rule-soft:#E5EAE4;--ink:#182231;
 --ink-2:#4A5462;--ink-3:#767E86;--navy:#1F3B6E;--navy-soft:#E3E9F3;--stamp:#A6392A;
---stamp-soft:#F6E5E1;--sage:#3F6B52;--sage-soft:#E2EDE5;--side:#EDF0EC}
+--stamp-soft:#F6E5E1;--sage:#3F6B52;--sage-soft:#E2EDE5;--side:#EDF0EC;--warm:#9A5B3C;--warm-bg:#F7EDE6;--warm-line:#E8D6C9}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#12161A;--card:#1A1F25;
 --rule:#2C343C;--rule-soft:#232A31;--ink:#E7EBE8;--ink-2:#AFB8BF;--ink-3:#838C94;--navy:#9DB6E4;
---navy-soft:#1E2938;--stamp:#E39184;--stamp-soft:#2E1F1D;--sage:#8FBFA1;--sage-soft:#1B2620;--side:#171C21}}
+--navy-soft:#1E2938;--stamp:#E39184;--stamp-soft:#2E1F1D;--sage:#8FBFA1;--sage-soft:#1B2620;--side:#171C21;--warm:#D9A588;--warm-bg:#26201C;--warm-line:#3A2E27}}
 :root[data-theme="dark"]{--paper:#12161A;--card:#1A1F25;--rule:#2C343C;--rule-soft:#232A31;
 --ink:#E7EBE8;--ink-2:#AFB8BF;--ink-3:#838C94;--navy:#9DB6E4;--navy-soft:#1E2938;--stamp:#E39184;
---stamp-soft:#2E1F1D;--sage:#8FBFA1;--sage-soft:#1B2620;--side:#171C21}
+--stamp-soft:#2E1F1D;--sage:#8FBFA1;--sage-soft:#1B2620;--side:#171C21;--warm:#D9A588;--warm-bg:#26201C;--warm-line:#3A2E27}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);line-height:1.8;word-break:keep-all;
 font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
@@ -210,6 +211,11 @@ vertical-align:.08em}
 .ev.s{background:var(--sage-soft);color:var(--sage)}
 .ev.m{background:var(--navy-soft);color:var(--navy)}
 .ev.w{background:var(--rule-soft);color:var(--ink-3)}
+.warm{background:linear-gradient(180deg,var(--warm-bg),transparent);border:1px solid var(--warm-line);
+border-left:3px solid var(--warm);border-radius:0 4px 4px 0;padding:1.1rem 1.4rem 1.3rem;margin:2rem 0}
+.warm h3,.warm h4{color:var(--warm);margin-top:.2rem;font-size:1.08rem}
+.warm p{color:var(--ink-2)}
+.warm blockquote{background:var(--card);border-left-color:var(--warm)}
 #top{border-bottom:2px solid var(--ink);padding-bottom:2rem;margin-bottom:1rem}
 .cover .eyebrow{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
 .cover h1{font-size:clamp(2.2rem,7vw,3.6rem);line-height:1.12;letter-spacing:-.035em;font-weight:800;
