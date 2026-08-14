@@ -454,11 +454,116 @@
 
 ---
 
+# 부록 M · 이 책의 출처
+
+이 책은 4장에서 "출처가 없는 정보를 의심하라"고 말하고, 40장에서 **"'○○ 연구에 따르면'만 있고 어떤 연구인지 없는 글"**을 위험 신호로 지목합니다. 그렇다면 이 책도 같은 기준을 통과해야 합니다.
+
+아래는 본문에서 **[강함]** 또는 **[보통]** 태그를 붙인 문장의 근거입니다. 논문 전체 목록이 아니라, **판단이 걸린 지점만** 골랐습니다.
+
+## 안전 — 이 책이 "타협하지 말라"고 말한 것들
+
+| 본문 주장 | 근거 |
+|---|---|
+| 등을 대고, 평평한 곳에, 잠자리엔 아무것도 · 같은 방 다른 잠자리 6~12개월 | AAP, *Sleep-Related Infant Deaths: Updated 2022 Recommendations for Reducing Infant Deaths in the Sleep Environment*, Pediatrics (2022) |
+| 뒤보기 카시트를 최대한 오래 | AAP, *Child Passenger Safety* 정책성명 |
+| 보행기 사용 금지 | AAP, *Injuries Associated With Infant Walkers* |
+| 만 1세 전 꿀 금지 | 영아 보툴리누스증 — 질병관리청·CDC 공통 권고 |
+
+## 발달 이정표
+
+| 본문 주장 | 근거 |
+|---|---|
+| 이 책의 모든 월령 이정표(75백분위 기준) | CDC, *Learn the Signs. Act Early.* 2022 개정판 — Zubler et al., *Evidence-Informed Milestones for Developmental Surveillance Tools*, Pediatrics (2022) |
+| K-DST 6개 영역·4단계 판정 | 국민건강보험공단 영유아 건강검진 발달평가 도구 |
+| 18·24개월 자폐 보편적 선별 | AAP, *Identification, Evaluation, and Management of Children With Autism Spectrum Disorder* (2020) / M-CHAT-R/F |
+
+## 언어와 놀이
+
+| 본문 주장 | 근거 |
+|---|---|
+| 단어 총량보다 **주고받은 대화 차례**가 언어·뇌를 예측 **[강함]** | Romeo et al., *Beyond the 30-Million-Word Gap: Children's Conversational Exposure Is Associated With Language-Related Brain Function*, Psychological Science (2018) |
+| 대화식 책읽기(PEER/CROWD)가 표현 언어를 향상 **[강함]** | Whitehurst et al., dialogic reading 연구군 |
+| 2세 미만은 화면에서 학습을 거의 전이하지 못함 **[강함]** | video deficit effect 연구군 · AAP, *Media and Young Minds* (2016) |
+| 놀이가 발달의 핵심 기전 **[보통~강함]** | AAP 임상보고서, *The Power of Play* (2018) |
+| 선형 보드게임이 수 감각을 향상 **[강함]** | Ramani & Siegler, 무작위 시험 |
+| 신체활동·수면·좌식 권고 수치 | WHO, *Guidelines on Physical Activity, Sedentary Behaviour and Sleep for Children Under 5 Years of Age* (2019) |
+
+## 훈육과 정서
+
+| 본문 주장 | 근거 |
+|---|---|
+| 체벌은 효과가 없고 해롭다 **[강함]** | AAP 정책성명, *Effective Discipline to Raise Healthy Children* (2018) |
+| 한국에서 부모 징계권 조항 삭제 | 민법 제915조 삭제 (2021) |
+| 과정 칭찬이 이후 도전을 견디게 함 **[보통]** | Gunderson et al., 종단연구 (2013) · Dweck |
+| 감정 코칭 5단계 **[보통]** | Gottman, *Raising an Emotionally Intelligent Child* |
+| 안전기지·회복(rupture and repair) | Bowlby · Ainsworth · Tronick(Still Face) · Circle of Security |
+| 기질 3유형과 궁합 | Thomas & Chess, 뉴욕종단연구 |
+| 근접발달영역·비계 설정 | Vygotsky |
+
+## 먹이기
+
+| 본문 주장 | 근거 |
+|---|---|
+| 알레르기 유발 식품을 늦추지 않고 이른 시기에 도입 **[강함]** | Du Toit et al., *Randomized Trial of Peanut Consumption in Infants at Risk for Peanut Allergy* (LEAP), NEJM (2015) |
+| 분말 분유를 70℃ 이상 물로 조제 | WHO, *Safe Preparation, Storage and Handling of Powdered Infant Formula* |
+| 완전 모유수유아 비타민 D 400 IU/일 | AAP 권고 |
+| 책임 분담 모델(부모는 무엇·언제·어디서, 아이는 얼마나) **[보통]** | Ellyn Satter, Division of Responsibility in Feeding |
+
+## 부모
+
+| 본문 주장 | 근거 |
+|---|---|
+| 산모 우울 치료가 아이의 발달 결과도 개선 **[강함]** | 산후우울 개입 연구군 (STAR*D-Child 등) |
+| EPDS 10문항·절단점 | Cox et al., Edinburgh Postnatal Depression Scale |
+| 질 좋은 보육에서 안정 애착이 형성됨 | NICHD Study of Early Child Care and Youth Development |
+
+## 이 책이 "근거가 흔들린다"고 표시한 것들
+
+균형을 위해, 유명하지만 재현이 약한 연구도 그대로 적어둡니다.
+
+| 주장 | 현재 상태 |
+|---|---|
+| 마시멜로 테스트의 예측력 | Watts, Duncan & Quan (2018) 재현 연구에서 가정 배경 통제 시 예측력이 크게 감소 |
+| 3천만 단어 격차 | Hart & Risley (1995) — 표본 42가구, 후속 재현이 부분적 |
+| 모차르트 효과 | 유아 IQ 상승 근거 사실상 없음 |
+| MMR 백신과 자폐 | Wakefield (1998) **철회됨**, 저자 면허 박탈. 이후 대규모 연구에서 반복적으로 부정 **[강함]** |
+
+## 한국 제도 (정책은 바뀝니다)
+
+이 부분은 **출처가 아니라 확인처**입니다. 이 책은 금액과 세부 조건을 본문에 적지 않았습니다.
+
+| 항목 | 확인처 |
+|---|---|
+| 예방접종 표준일정 | 질병관리청 예방접종도우미 `nip.kdca.go.kr` |
+| 영유아 건강검진 8차 + 구강 4차 | 국민건강보험공단 `nhis.or.kr` |
+| 현금성·서비스 지원 | 복지로 `bokjiro.go.kr` |
+| 야간·휴일 소아진료 | 응급의료포털 `e-gen.or.kr` (달빛어린이병원) |
+
+> **한계를 밝힙니다.** 위 목록은 본문의 모든 문장을 덮지 않습니다. 태그가 붙지 않은 문장은 대개 학회 자료의 일반적 내용이거나 **[관행]** 수준입니다. 그리고 이 책은 원 논문을 전수 검토한 것이 아니라 **학회·공공기관의 권고문을 옮긴 것**입니다. 그 한계를 알고 읽어주세요.
+
+---
+
 # 💛 닫는 글
 
-여기까지 오셨네요.
+## 다시, 새벽 두 시
 
-이 책은 40장이 넘지만, 사실 하고 싶었던 말은 몇 줄 되지 않습니다. 마지막으로 그것만 남기고 마칠게요.
+이 책은 새벽 두 시로 시작했습니다.
+
+아이가 사십 분째 울고 있고, 당신은 한 손으로 검색창에 "신생아 계속 울 때"를 치고 있었죠. 열 개의 글이 서로 다른 말을 하고, 절반은 무언가를 팔고 있고, 결국 아무것도 결정하지 못한 채 휴대폰을 내려놓았습니다.
+
+이제 5년 뒤의 새벽 두 시를 상상해볼게요.
+
+같은 시각에 문이 열립니다. 여섯 살이 된 아이가 잠옷 바람으로 서 있어요. 무서운 꿈을 꿨대요. 당신은 눈도 제대로 못 뜬 채 이불을 들춰줍니다. 아이가 파고들어 옵니다. 3분 뒤에 다시 잠듭니다.
+
+그게 전부입니다. 그리고 그게 이 책이 말하려던 전부입니다.
+
+**아이는 5년 동안 점점 멀리 나갔고, 여전히 당신에게 돌아옵니다.**
+
+그 밤들이 이걸 만든 거예요. 교구도, 학습지도, 완벽한 하루도 아니고 — 울면 누군가 왔던 수천 번의 반복이요.
+
+---
+
+## 남기고 싶은 네 문장
 
 **아이에게 필요한 건 완벽한 부모가 아닙니다.**
 돌아올 자리가 되어주는, 웬만큼 안정된 어른 한 명이면 됩니다. 그 자리는 화려할 필요도, 늘 열려 있을 필요도 없어요. 아이가 돌아왔을 때 **거기 있기만 하면** 됩니다.
@@ -474,7 +579,22 @@
 
 ---
 
-혹시 오늘 아무것도 못 한 것 같은 날이라면, 이렇게 세어보세요.
+## ✋ 내일 아침에 할 한 가지
+
+이 책을 덮고 나서 할 일은 하나면 충분합니다. 아이 월령에 맞는 것 하나만 고르세요.
+
+| 지금 | 내일 아침에 할 한 가지 |
+|---|---|
+| **출산 전** | 카시트를 차에 장착해보세요. 설명서를 펴고 30분이면 됩니다 |
+| **0~3개월** | 아기가 소리를 내면 **똑같이 따라 하고 5초 기다려**보세요. 딱 한 번만 |
+| **4~6개월** | 첫니가 났다면 오늘 저녁에 칫솔을 사세요 |
+| **7~12개월** | 무릎으로 앉아 거실을 한 바퀴 둘러보세요. 치울 것이 보일 거예요 |
+| **13~24개월** | 아이가 한 단어를 말하면 **한 단어를 더 붙여** 돌려주세요 |
+| **24~36개월** | 아이가 울면 첫 마디를 "괜찮아" 대신 **감정 이름**으로 시작해보세요 |
+| **만 3~5세** | 저녁 식탁에서 "오늘 뭐가 제일 재미있었어?"를 물어보세요 |
+| **모든 시기** | [부록 E](appendix.md)를 인쇄해 냉장고에 붙이세요. 5분이면 됩니다 |
+
+그리고 오늘 아무것도 못 한 것 같은 날이라면, 이렇게 세어보세요.
 
 **아이를 먹였고, 재웠고, 안아줬다면 — 오늘 할 일은 다 하신 겁니다.**
 
