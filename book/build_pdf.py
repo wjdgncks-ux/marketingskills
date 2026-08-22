@@ -23,12 +23,13 @@ main = re.sub(r'<hr>\s*<p><strong>돌아가기</strong>.*?</p>', "", main, flags
 # 체크박스는 인쇄용 네모로
 main = main.replace('<input type="checkbox" class="box">', '<span class="box">☐</span>')
 
-# --- 아스키 도표(냉장고 시트) 정렬 보정 ---
-# 원고는 박스 문자·기호를 반각(1칸)으로 계산해 그렸지만, 폰트는 이들을 전각(2칸)으로
-# 렌더링해 프레임이 어긋난다. 해당 문자만 가로 50%로 눌러 원고의 칸 수와 맞춘다.
+# 제목 바로 앞의 구분선은 이중 신호다 — 제목이 이미 단락을 나눈다
+main = re.sub(r"(?:\s*<hr>)+(\s*<h[345])", r"\1", main)
 # 장 끝에 겹친 구분선은 빈 페이지를 만든다 — h2/섹션 앞의 <hr>은 지운다
 main = re.sub(r"(?:\s*<hr>)+(\s*(?:</section>|<section|<h2))", r"\1", main)
 main = re.sub(r"(?:<hr>\s*){2,}", "<hr>\n", main)
+# "→ 다음: …" 한 줄이 홀로 다음 쪽으로 넘어가지 않게 앞 내용에 붙인다
+main = re.sub(r"<p>(→ 다음:.*?)</p>", r'<p class="nx">\1</p>', main)
 
 TOP = re.compile(r"^\s*┌─+┐\s*$")
 BOT = re.compile(r"^\s*└─+┘\s*$")
@@ -54,8 +55,16 @@ def _unframe(m):
     return "<pre>" + "\n".join(out) + "</pre>"
 
 
+# 「📌 요약 3줄」은 제목과 목록이 쪽 경계로 갈라지지 않게 한 덩어리로 묶는다
+main = re.sub(r"(<p><strong>📌[^<]*</strong></p>\s*<ol>.*?</ol>)",
+              r'<div class="sum">\1</div>', main, flags=re.S)
+
 main = re.sub(r"<pre>(.*?)</pre>", _unframe, main, flags=re.S)
 
+
+# --- 아스키 도표(냉장고 시트) 정렬 보정 ---
+# 원고는 박스 문자·기호를 반각(1칸)으로 계산해 그렸지만, 폰트는 이들을 전각(2칸)으로
+# 렌더링해 프레임이 어긋난다. 해당 문자만 가로 50%로 눌러 원고의 칸 수와 맞춘다.
 
 def _halfwidth(m):
     inner, out, i = m.group(1), [], 0
@@ -95,7 +104,8 @@ html{--ink:#141a20;--ink-2:#3d4750;--ink-3:#6d7780;--rule:#c9d0cb;--rule-soft:#e
 --sage:#356048;--sage-soft:#e5efe8;--warm:#8a4f30;--warm-bg:#fbf2ec;--warm-line:#e8d6c9}
 body{margin:0;color:var(--ink);background:#fff;
 font-family:"NanumGothic","NanumBarunGothic",sans-serif;
-font-size:10pt;line-height:1.72;word-break:keep-all;text-align:justify}
+font-size:10pt;line-height:1.6;word-break:keep-all;text-align:left;
+orphans:2;widows:2}
 .serif{font-family:"NanumMyeongjo",serif}
 
 /* ---- 표지 ---- */
@@ -121,36 +131,37 @@ ol.toc li.apx{color:var(--ink-3)}
 
 /* ---- 본문 ---- */
 h2{font-family:"NanumMyeongjo",serif;font-size:19pt;line-height:1.25;font-weight:700;
-margin:0 0 5mm;padding-bottom:2.5mm;border-bottom:1.5pt solid var(--ink);
-page-break-before:always;page-break-after:avoid;letter-spacing:-.01em}
-h3{font-size:12.5pt;font-weight:700;margin:7mm 0 2mm;page-break-after:avoid;
+margin:0 0 4mm;padding-bottom:2.5mm;border-bottom:1.5pt solid var(--ink);
+page-break-after:avoid;letter-spacing:-.01em}
+h2[id]{page-break-before:always}
+h3{font-size:12.5pt;font-weight:700;margin:5.5mm 0 1.5mm;page-break-after:avoid;
 color:var(--ink);border-left:2.5pt solid var(--navy);padding-left:2.5mm}
-h4{font-size:10.5pt;font-weight:700;margin:5mm 0 1.5mm;page-break-after:avoid}
-h5{font-size:9.5pt;font-weight:700;margin:4mm 0 1mm;color:var(--ink-2);page-break-after:avoid}
-p{margin:2mm 0;color:var(--ink-2)}
+h4{font-size:10.5pt;font-weight:700;margin:3.6mm 0 1.2mm;page-break-after:avoid}
+h5{font-size:9.5pt;font-weight:700;margin:2.8mm 0 .8mm;color:var(--ink-2);page-break-after:avoid}
+p{margin:1.5mm 0;color:var(--ink-2)}
 p strong,li strong,td strong{color:var(--ink);font-weight:700}
 a{color:var(--ink);text-decoration:none}
-ul,ol{margin:2mm 0;padding-left:5.5mm;color:var(--ink-2)}
-li{margin:.9mm 0}
+ul,ol{margin:1.5mm 0;padding-left:5.5mm;color:var(--ink-2)}
+li{margin:.55mm 0}
 ul.check{list-style:none;padding-left:1mm}
 ul.check label{display:block}
 .box{color:var(--ink-3);margin-right:1.5mm}
-hr{border:none;border-top:.5pt solid var(--rule-soft);margin:6mm 0}
+hr{border:none;border-top:.5pt solid var(--rule-soft);margin:3.4mm 0}
 
-blockquote{margin:3mm 0;padding:2.5mm 4mm;background:var(--card);
+blockquote{margin:2.4mm 0;padding:2.2mm 3.5mm;background:var(--card);
 border-left:2pt solid var(--navy);page-break-inside:avoid}
 blockquote p{margin:1mm 0}
-pre{background:var(--card);border:.5pt solid var(--rule);padding:3mm 3.5mm;
-font-family:"NanumGothicCoding",monospace;font-size:8.5pt;line-height:1.5;
-white-space:pre;overflow:hidden;color:var(--ink-2);page-break-inside:avoid;margin:3mm 0}
+pre{background:var(--card);border:.5pt solid var(--rule);padding:2.2mm 2.8mm;
+font-family:"NanumGothicCoding",monospace;font-size:7.9pt;line-height:1.34;
+white-space:pre;overflow:hidden;color:var(--ink-2);page-break-inside:avoid;margin:2.4mm 0}
 pre .hw{display:inline-block;width:.5em;transform:scaleX(.5);transform-origin:left center}
 pre .hw2{display:inline-block;width:.5em;overflow:visible;text-indent:-.25em}
 code{font-family:"NanumGothicCoding",monospace;font-size:.9em;
 background:var(--navy-soft);color:var(--navy);padding:0 .8mm;border-radius:1pt}
 
-.scroll{border:.5pt solid var(--rule);margin:3mm 0;page-break-inside:auto}
-table{border-collapse:collapse;width:100%;font-size:8.6pt;table-layout:fixed}
-th,td{text-align:left;padding:1.6mm 2.2mm;border-bottom:.4pt solid var(--rule-soft);
+.scroll{border:.5pt solid var(--rule);margin:2.4mm 0;page-break-inside:auto}
+table{border-collapse:collapse;width:100%;font-size:8.4pt;line-height:1.45;table-layout:fixed}
+th,td{text-align:left;padding:1.15mm 1.9mm;border-bottom:.4pt solid var(--rule-soft);
 vertical-align:top;color:var(--ink-2);word-break:keep-all;overflow-wrap:anywhere}
 thead th{font-size:7.4pt;letter-spacing:.06em;color:var(--ink-3);font-weight:700;
 background:var(--card);border-bottom:.8pt solid var(--rule)}
@@ -163,9 +174,11 @@ tbody tr:last-child td{border-bottom:none}
 .ev.w{background:var(--rule-soft);color:var(--ink-3)}
 
 .warm{background:var(--warm-bg);border:.5pt solid var(--warm-line);
-border-left:2.5pt solid var(--warm);padding:3mm 4mm;margin:5mm 0;page-break-inside:avoid}
-.warm h3,.warm h4{color:var(--warm);border:none;padding-left:0;margin-top:1mm;font-size:11pt}
+border-left:2.5pt solid var(--warm);padding:2.5mm 3.5mm;margin:3.6mm 0;page-break-inside:avoid}
+.warm h3,.warm h4{color:var(--warm);border:none;padding-left:0;margin-top:.8mm;font-size:11pt}
 .warm blockquote{background:#fff;border-left-color:var(--warm)}
+.sum{page-break-inside:avoid;margin-top:3mm}
+.nx{page-break-before:avoid;margin-top:4mm;font-size:9pt;color:var(--ink-3)}
 .rt{display:none}
 section{page-break-before:auto}
 """
