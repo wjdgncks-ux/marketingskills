@@ -68,6 +68,7 @@ def inline(t):
     t = html.escape(t, quote=False)
     t = re.sub(r"`([^`]+)`", r"<code>\1</code>", t)
     t = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", t)
+    t = re.sub(r"\*([^*\n]+)\*", r"<em>\1</em>", t)
 
     def link(m):
         label, target = m.group(1), m.group(2)
