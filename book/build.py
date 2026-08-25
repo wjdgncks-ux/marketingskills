@@ -454,7 +454,7 @@ doc = f"""<title>돌아올 자리 — 첫 5년 실행 매뉴얼</title>
 {''.join(nav)}
 </nav>
 <div class="foot">진행 상황은 이 브라우저에 저장됩니다
-<br><button class="pr-sheets">냉장고 시트만 인쇄</button>
+<br><button class="pr-sheets">오려 쓰는 한 장만 인쇄</button>
 <button class="pr-all">전체 인쇄</button></div>
 </aside>
 <main>

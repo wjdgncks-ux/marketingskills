@@ -30,6 +30,11 @@ main = re.sub(r"(?:\s*<hr>)+(\s*(?:</section>|<section|<h2))", r"\1", main)
 main = re.sub(r"(?:<hr>\s*){2,}", "<hr>\n", main)
 # "→ 다음: …" 한 줄이 홀로 다음 쪽으로 넘어가지 않게 앞 내용에 붙인다
 main = re.sub(r"<p>(→ 다음:.*?)</p>", r'<p class="nx">\1</p>', main)
+# 「오려 쓰는 한 장」은 이름 그대로 한 장이어야 한다 — 늘 새 쪽에서 시작
+main = re.sub(r"<h3>(\s*✂️ 오려 쓰는 한 장 [①-⑧])", r'<h3 class="cut">\1', main)
+# 부록 E는 "딱 하나만 인쇄한다면" 안내한 양식 — 벽에서 읽히게 키운다
+main = re.sub(r'(<h2 id="apx-E">.*?)<div class="sheet">', r'\1<div class="sheet big">',
+              main, count=1, flags=re.S)
 
 TOP = re.compile(r"^\s*┌─+┐\s*$")
 BOT = re.compile(r"^\s*└─+┘\s*$")
@@ -136,6 +141,12 @@ page-break-after:avoid;letter-spacing:-.01em}
 h2[id]{page-break-before:always}
 h3{font-size:12.5pt;font-weight:700;margin:5.5mm 0 1.5mm;page-break-after:avoid;
 color:var(--ink);border-left:2.5pt solid var(--navy);padding-left:2.5mm}
+h3.cut{page-break-before:always;font-size:15pt;margin:0 0 3mm;padding:0 0 2mm;
+border-left:none;border-bottom:1pt solid var(--ink);font-family:"NanumMyeongjo",serif}
+/* 오려 쓰는 한 장: 벽에 붙여놓고 읽을 크기로 키우고 자르는 선을 준다 */
+h3.cut ~ pre,h3.cut ~ .sheet pre,.sheet.big pre{font-size:10.6pt;line-height:1.5;padding:7mm 8mm;
+border:1.2pt dashed var(--ink-3);background:#fff}
+h3.cut ~ blockquote{font-size:9pt}
 h4{font-size:10.5pt;font-weight:700;margin:3.6mm 0 1.2mm;page-break-after:avoid}
 h5{font-size:9.5pt;font-weight:700;margin:2.8mm 0 .8mm;color:var(--ink-2);page-break-after:avoid}
 p{margin:1.5mm 0;color:var(--ink-2)}
@@ -155,7 +166,7 @@ pre{background:var(--card);border:.5pt solid var(--rule);padding:2.2mm 2.8mm;
 font-family:"NanumGothicCoding",monospace;font-size:7.9pt;line-height:1.34;
 white-space:pre;overflow:hidden;color:var(--ink-2);page-break-inside:avoid;margin:2.4mm 0}
 pre .hw{display:inline-block;width:.5em;transform:scaleX(.5);transform-origin:left center}
-pre .hw2{display:inline-block;width:.5em;overflow:visible;text-indent:-.25em}
+pre .hw2{display:inline-block;width:.5em;transform:scaleX(.58);transform-origin:left center}
 code{font-family:"NanumGothicCoding",monospace;font-size:.9em;
 background:var(--navy-soft);color:var(--navy);padding:0 .8mm;border-radius:1pt}
 
