@@ -11,6 +11,7 @@ OUT = "/tmp/claude-0/-home-user-marketingskills/4c2177e6-845c-5208-8f12-3c53b0af
 ORDER = [
     ("00-how-to-read.md",          "시작"),
     ("00-opening.md",              None),
+    ("00-timeline.md",             None),
     ("part1.md",                   "1부 판 읽기"),
     ("part2-ch05-four-beats.md",   "2부 도구함"),
     ("part2-ch06-emotion.md",      None),
@@ -58,6 +59,8 @@ def anchor_for(title):
         return "opening"
     if title.startswith("이 책을 읽는 법"):
         return "howto"
+    if title.startswith("첫 5년 타임라인"):
+        return "timeline"
     m = re.match(r"^(\d)부", title)
     if m:
         return "part-" + m.group(1)
