@@ -11,6 +11,7 @@
 | 가리키기 (공동주의) | [13장](part3-ch13-7-12m.md) · [37장](part7.md) |
 | 가와사키병 | [20장](part4-ch20-fever.md) · [37장](part7.md) |
 | 감기 | [21장](part4-ch21-illness.md) |
+| 교정연령 (이른둥이) | [37장](part7.md) · [읽는 법](00-how-to-read.md) |
 | 감정 코칭 | [6장](part2-ch06-emotion.md) · [15장](part3-ch15-24-36m.md) |
 | 거짓말 | [7장](part2-ch07-discipline.md) · [16장](part3-ch16-3-5y.md) |
 | 건강검진 (영유아) | [30장](part6.md) · [부록 B](appendix.md) |
@@ -30,6 +31,7 @@
 
 | 항목 | 위치 |
 |---|---|
+| 단유 (젖떼기) | [17장](part4-ch17-feeding.md) |
 | 낮잠 전환 | [19장](part4-ch19-sleep.md) |
 | 낯가림 | [13장](part3-ch13-7-12m.md) |
 | 네 박자 ★ | [5장](part2-ch05-four-beats.md) |
@@ -45,6 +47,7 @@
 
 | 항목 | 위치 |
 |---|---|
+| 몸의 명칭 가르치기 (자기보호) | [15장](part3-ch15-24-36m.md) · [16장](part3-ch16-3-5y.md) |
 | 말더듬 | [39장](part7.md) |
 | 머리 부딪힘 | [22장](part4-ch22-emergency.md) |
 | 모세기관지염 (RSV) | [21장](part4-ch21-illness.md) |
@@ -67,6 +70,7 @@
 
 | 항목 | 위치 |
 |---|---|
+| 셰어런팅 (아이 사진 공유) | [8장](part2-ch08-environment.md) |
 | 산모·신생아 건강관리 지원 | [33장](part6.md) · [10장](part3-ch10-prep.md) |
 | 산모의 몸 회복 | [24장](part5.md) |
 | 산후우울 | [25장](part5.md) |
@@ -87,6 +91,8 @@
 
 | 항목 | 위치 |
 |---|---|
+| 응급실 갈 때 챙길 것 | [부록 E](appendix.md) |
+| 아빠의 산후우울 | [25장](part5.md) |
 | 아구창 | [21장](part4-ch21-illness.md) · [23장](part4-ch23-skin-teeth.md) |
 | 아나필락시스 | [22장](part4-ch22-emergency.md) · [18장](part4-ch18-solids.md) |
 | 아토피 피부염 | [23장](part4-ch23-skin-teeth.md) |
